@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<!--
+	Made By:
+	akaxhrana
+-->
+<head>
+	<meta charset="UTF-8">
+	
+	<title>Autumn Leaves Solutions</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="Blog">
+	<meta name="description" content="Blog for beginners">
+	
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="/css/style1.css" rel="stylesheet" type="text/css" media="screen">
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	
+	<!--To reload the browser everytime-->
+	<script>
+		window.onpageshow = function(event) {
+			if (event.persisted) {
+				window.location.reload() 
+			}
+		};		
+	</script>
+	
+</head>
+
+<body>
+	
+	<!-------------------------sorry, i am still a beginner and i don't know much about express-----
+		----------------------------so i added two headers and added an onScroll function in 'custom.js'-->
+		
+		<!------------------------------------------------------------------------------
+			------------------------------------Header After Scrolling----------------------
+			------------------------------------------------------------------------------------>
+			
+			
+			<nav class="navbar navbar-expand-lg custom_trans" id="scroll_nav" style=" -webkit-backface-visibility: hidden;">
+				
+				<div class="collapse navbar-collapse col-lg-3" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a id="createButton" class="nav-link" href="/create">Create</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/about">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/contact">Contact</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-6" >
+					<a class="navbar-brand col-lg-12" id='brandName' href="/">Autumn Leaves Solutions</a>
+				</div>
+				<!--------------------------Right side header--------------------->
+				@if(!auth)
+				
+				<ul class="nav navbar-nav navbar-right col-lg-3">
+					
+					<!-------------------------Login Modal (main login)-------------------------------->
+					
+					<!-- Button to open the modal login form -->
+					<li><a class="login_signup_click" onclick="document.getElementById('id01').style.display='block'" style="text-decoration:none"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					&nbsp;&nbsp;
+					<!-- The Modal -->
+					<div id="id01" class="modal">
+						<span onclick="document.getElementById('id01').style.display='none'"
+						class="close" title="Close Modal">&times;</span>
+						
+						<form class="modal-content animate" action="/users/login" method="POST">
+							<div class="login_text">
+								Login
+							</div>
+							
+							<div class="container">
+								<label for="email"><b>E-mail</b></label>
+								<input type="email" placeholder="Enter E-mail" name="email" required>
+								
+								<label for="password"><b>Password</b></label>
+								<input type="password" placeholder="Enter Password" name="password" required>
+								
+								<button type="submit" id="loginbtn">Login</button>
+								
+							</div>
+							
+							<div class="container" style="background-color:#f1f1f1">
+								<button type="button" onclick="document.getElementById('id02').style.display='block'" style="text-decoration:none" class="cancelbtn" id="createnewaccountbutton1">Create New Account</button>
+								<span class="password"> <a href="#">Forgot password?</a></span>
+							</div>
+						</form>
+					</div> 
+					
+					<!----------------------------------Login form (create new post)-------------------->
+					
+					<input type="hidden" class="login_signup_click" onclick="document.getElementById('id03').style.display='block'" style="text-decoration:none">
+					<!-- The Modal -->
+					<div id="id03" class="modal">
+						<span onclick="document.getElementById('id03').style.display='none'"
+						class="close" title="Close Modal">&times;</span>
+						
+						<form class="modal-content animate" action="/createLogin" method="POST">
+							<div class="login_text">
+								Login
+							</div>
+							
+							<div class="container">
+								<label for="email"><b>E-mail</b></label>
+								<input type="email" placeholder="Enter E-mail" name="email" required>
+								
+								<label for="password"><b>Password</b></label>
+								<input type="password" placeholder="Enter Password" name="password" required>
+								
+								<button type="submit" id="loginbtn">Login</button>
+								
+							</div>
+							
+							<div class="container" style="background-color:#f1f1f1">
+								<button type="button" onclick="document.getElementById('id02').style.display='block'" style="text-decoration:none" class="cancelbtn" id="createnewaccountbutton3">Create New Account</button>
+								<span class="password"> <a href="#">Forgot password?</a></span>
+							</div>
+						</form>
+					</div>
+					
+					<!------------------------------------Sign Up form-------------------------------->
+					
+					<li><a class="login_signup_click" onclick="document.getElementById('id02').style.display='block'" style="text-decoration:none"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					
+					<!-- The Modal -->
+					<div id="id02" class="modal">
+						<span onclick="document.getElementById('id02').style.display='none'"
+						class="close" title="Close Modal">&times;</span>
+						
+						<form class="modal-content animate" action="/users/register" method="POST">
+							<div class="login_text">
+								Sign Up
+							</div>
+							
+							<div class="container">
+								<label for="username"><b>Username</b></label>
+								<input type="text" placeholder="Choose Username" name="username" required>
+								
+								<label for="email"><b>E-mail</b></label>
+								<input type="email" placeholder="Enter E-mail" name="email" required>
+								
+								<label for="password"><b>Password</b></label>
+								<input type="password" placeholder="Enter Password" name="password" required>
+								
+								<button type="submit" id="loginbtn">Sign Up</button>
+								
+							</div>
+							
+							<div class="container" style="background-color:#f1f1f1">
+								<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+								
+							</div>
+						</form>
+					</div> 
+					
+					<!----------------------------------------forms till here----------------------------------->
+					
+				</ul>
+				@else
+				<ul class="nav navbar-nav navbar-right col-lg-3">
+					<li><a href="/auth/logout"><span class="glyphicon glyphicon-log-out"></span> Logout </a></li>
+					<span>&nbsp;:&nbsp;{{currUser.username}}</span>
+				</ul>
+				
+				@endif
+				
+				
+			</nav> 
+			
+			<!--Header-->
+			
+			<!--Content-->
+			@!section('content')
+			<!--Content-->
+			
+			<!--Footer-->
+			<div id='foot_div'>
+				<footer class="page-footer font-small blue">
+					<div class="footer-copyright text-center py-3">Designed by:
+						<a href="https://autumnleavessolutions.com/"> Autumn Leaves Solutions</a>
+					</div>
+				</footer>
+			</div>
+			
+			<!--Footer-->
+			
+			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+			<script src="/js/scroll.js"></script>
+			<script src="/js/log_sign.js"></script>
+			
+			<!-------------------To refresh the browser everytime--------------------------->
+			
+			
+		</body>
+		</html>	
+		
+		
+		
+		
+		
+		
+		

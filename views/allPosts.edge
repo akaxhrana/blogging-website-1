@@ -1,0 +1,32 @@
+@layout('layouts.app')
+
+@section('content')
+
+<div class="container-fluid page2">
+	
+	<div class="posts_div">
+		
+		<h1>Recent Posts</h1>
+		
+		@each(post in posts)
+			    @if($loop.index < 5)
+
+		<div class="postFull">
+			<h2> {{post.title}}</h2>
+			<div class="postMeta">Posted by: {{post.username}}</div>
+			<div class="postMeta">Posted at: {{post.postedAt.toDateString().replace(/^\S+\s/,'')}} at {{ post.postedAt.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'}) }}</div>
+			
+			<div class="postContent">
+				<p>{{post.content}}</p>
+			</div>	
+			
+			<a href="/post/{{post._id}}" id="showFullPost"> View Full Post</a>
+		</div>
+		
+		
+		@endif
+		@endeach
+	</div>
+</div>
+
+@endsection

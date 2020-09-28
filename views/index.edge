@@ -1,0 +1,58 @@
+@layout('layouts.app')
+
+@section('content')
+
+<div class="container-fluid page1-front">
+	<div class='row page1-text'>
+		<h3>Welcome!</h3>
+		
+		@if(!auth)
+		
+		<a id="startBlogging"><h1>Start Blogging</h1></a>
+		
+		@else
+		
+		<a href="/posts" id="startBlogging"><h1>Start Blogging</h1></a>
+		
+		@endif
+	</div>
+</div>
+
+@if(!auth)
+
+<div class="container-fluid page1-login">
+	<div class="row page1-login">
+		
+		<form class="page1-login-form" action="/users/login-front-page" method="POST">
+			<div class="login_text">
+				Login
+			</div>
+			
+			<div class="container">
+				
+				
+				<input class="glyphicon glyphicon-log-in" id="page1_input" type="email" placeholder="Enter E-mail" name="email" required />
+				
+				<input id="page1_input" type="password" placeholder="Enter Password" name="password" required>
+				
+				<button type="submit" id="loginbtn">Enter Now</button>
+				
+			</div>					
+		</form>
+		
+	</div> 
+	<a href="/posts"><h3>I am here to read only!</h3></a>
+</div>
+
+<script>
+	const elem = document.getElementById('startBlogging');
+	const height = window.innerHeight;
+	elem.addEventListener('click', function (e) {
+		window.scrollTo({ top: height, behavior: 'smooth' });
+		
+	});
+</script>
+@endif
+
+
+	@endsection

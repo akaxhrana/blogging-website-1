@@ -1,0 +1,183 @@
+.page1-front{
+  background-color: #485461;
+  background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+  box-sizing: border-box;
+  margin: 0px ;
+  height: 100vh;
+  width: 100%;
+  position: relative;   
+}
+
+.page1-text h1{
+  margin: 0;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: white;
+  border: 1px solid white;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.page1-text a:hover{
+  cursor: pointer;
+}
+
+.page1-text h3{
+  margin: 0;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: white;
+  border: 1px solid #b9c4cf;
+  padding: 20px;
+  border-radius: 2px;
+}
+
+/*********************************************Login**********************************/
+
+.page1-login{
+  
+  background-image: url('/images/galaxy.jpg');
+  width: 100%;
+  height:600px;
+  background-size: cover; /* or contain depending on what you want */
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align:center;
+  margin:auto;
+  padding:0;  
+  z-index: -1;
+  position: relative;
+}
+
+.page1-login-form{
+  width: 30%;
+  margin: auto auto;
+  
+}
+
+.page1-login-form > .login_text{
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(0,0,0,0.2);
+}
+
+#page1_input{
+  color: white;
+  font-size:18px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.5px solid rgba(0,0,0,0.2);
+}
+#page1_input:hover{
+  border-bottom: 1px solid black;
+}
+
+.page1-login-form > .container > #loginbtn{
+  background: transparent;
+  font-size: large;
+  
+}
+
+.page1-login h3{
+  margin: 0;
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: rgb(206, 197, 197);
+  border: 1px solid #b9c4cf;
+  padding: 20px;
+}
+
+.page1-login h3:hover{
+  cursor: pointer;
+}
+
+
+/**********************************************************************
+PAGE 2 - ALL POSTS
+***************************************************************/
+
+.page2 {
+  box-sizing: border-box;
+  margin: 48px 0 0 0;
+  
+  width: 100%;
+
+  background-color: #ffffff;
+background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+  
+}
+
+.posts_div{
+  
+  top:10%;
+  margin:0 auto;
+  width: 60%;
+}
+
+.page2 h1{
+  text-align: center;
+  margin: 0 auto;
+  color: rgb(209, 202, 202);
+  padding: 5px;
+  width: 50%;
+  border-radius: 3px;
+  background-color: #ffffff;
+background-image: linear-gradient(360deg, #ffffff 0%, #d7e1ec 74%);
+}
+
+.postFull {
+  margin: 20px 20px 0px 20px ;
+  width: 100%;
+  height:100vh;
+  padding: 16px;
+ background-color: #000000;
+background-image: linear-gradient(250deg, #474343 0%, #7f8c8d 74%);
+opacity: 0.7;
+border-radius: 4px;
+
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.postFull h2{
+  padding: 10px;
+ font-size: 28px;
+ color: rgb(252, 247, 247);
+ border-bottom: 0.5px solid black;
+}
+
+.postMeta{
+  padding: 12px;
+  color:white
+}
+
+.postContent{
+  color: white;
+ padding:15px;
+height:60%;
+  overflow: hidden;
+  text-overflow: clip;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  word-spacing: 0;
+}
+
+#showFullPost{
+  position: absolute;
+  margin:15px;
+  padding:20px;
+  font-size: 16px;
+  color :white;
+  background-color: #2f4353;
+background-image: linear-gradient(180deg, #2f4353 50%, #d2ccc4 74%);
+border-radius: 4px;
+  
+}

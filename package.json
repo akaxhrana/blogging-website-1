@@ -1,0 +1,35 @@
+{
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {},
+  "name": "blog_front",
+  "description": "A blogging website with authentication.",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "express-edge": "^2.0.2",
+    "express-fileupload": "^1.2.0",
+    "mongoose": "^5.10.6",
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Autumn-leaves-solutions/blog_front.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Autumn-leaves-solutions/blog_front/issues"
+  },
+  "homepage": "https://github.com/Autumn-leaves-solutions/blog_front#readme"
+}
