@@ -55,7 +55,7 @@ app.use(
   /*******************************Add your own Mongo DB, or however it works**************/
 
 
-  mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/blogs", { useNewUrlParser: true, })
+  mongoose.connect("mongodb://localhost:27017/blogs", { useNewUrlParser: true, })
   .then(() => "You are now connected to Mongo!")
   .catch((err) => console.error("Something went wrong", err));
   
@@ -109,6 +109,6 @@ app.post("/users/login-front-page", redirectIfAuthenticated, login_front_pageUse
   
   /*------------------Server setup------------------*/
   
-  app.listen(process.env.PORT || 4000, () => {
+  app.listen(4000, () => {
     console.log('App listening on port 4000 after change')
   });
